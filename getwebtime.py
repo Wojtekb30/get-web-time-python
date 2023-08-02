@@ -8,6 +8,8 @@ def getwebtimeint(timezone: int):
     czas = str(r.text).split("/")
     if timezone!=1:
         czas[3] = int(czas[3])-1+timezone
+        if czas[3]<0:
+            czas[3] = 24+czas[3]
     n = 0
     dlugosc = len(czas)
     while n<dlugosc:
@@ -22,6 +24,9 @@ def getwebtimestr(timezone: int):
     r = requests.get('https://birdtech.pl/api/gettime/polandstring')
     czas = str(r.text).split("/")
     if timezone!=1:
-        czas[3] = str(int(czas[3])-1+timezone)
+        czas[3] = int(czas[3])-1+timezone
+        if czas[3]<0:
+            czas[3]=24+czas[3]
+        czas[3] = str(czas[3])
     #print(czas)
     return czas
