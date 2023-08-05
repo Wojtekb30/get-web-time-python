@@ -17,10 +17,13 @@ Timezone map to use as reference:
 The function will return an array;
 
 getwebtimestr() will return array with: year [str], month [str], day [str], hour [str], minute [str], second [str] in order in the array.
+
 getwebtimeint() will return array with: year [int], month [int], day [int], hour [int], minute [int], second [int] in order.
 
 Examples:
+
 getwebtimeint(2) - time in Egypt
+
 getwebtimestr(-3) - time in Greenland
 
 # Limitations, usage and privacy policy:
